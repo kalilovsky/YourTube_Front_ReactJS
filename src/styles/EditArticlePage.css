@@ -1,0 +1,139 @@
+.editPopup {
+  position: relative;
+  left: 0;
+  top: 100px;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
+  -webkit-transition: opacity 0.5s, -webkit-transform 1s;
+  transition: opacity 0.5s, -webkit-transform 1s;
+  transition: transform 1s, opacity 0.5s;
+  transition: transform 1s, opacity 0.5s, -webkit-transform 1s;
+  background: rgba(0, 0, 0, 0.08);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+.editPopup.visible {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: opacity 0.5s, -webkit-transform 0.2s;
+  transition: opacity 0.5s, -webkit-transform 0.2s;
+  transition: transform 0.2s, opacity 0.5s;
+  transition: transform 0.2s, opacity 0.5s, -webkit-transform 0.2s;
+  opacity: 1;
+}
+
+.editPopup.visible .thePopup {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.editPopup .thePopup {
+  position: relative;
+  width: 70%;
+  height: 90%;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background: #F8F9F7;
+}
+
+.editPopup .thePopup .popUpCloseBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  font-size: 18px;
+  text-align: center;
+  line-height: 25px;
+  color: #fdfdfd;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.editPopup .thePopup .title {
+  padding: 10px 0;
+  text-align: center;
+}
+
+.editPopup .thePopup .body1 .head.user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.editPopup .thePopup .body1 div {
+  padding: 5px 10px;
+}
+
+.editPopup .thePopup .body1 div label {
+  padding: 0px 5px;
+}
+
+.editPopup .thePopup .body1 .rightEdit .photo img {
+  height: 200px;
+}
+
+.editPopup .thePopup .body1 .messageContent {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.editPopup .thePopup .body1 .messageContent textarea {
+  position: relative;
+  margin: 0 30px;
+  width: 80%;
+  outline: none;
+}
+
+.editPopup .thePopup .editButton {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+
+.editPopup .thePopup .editButton button {
+  padding: 5px 10px;
+  font-size: medium;
+}
+/*# sourceMappingURL=EditArticlePage.css.map */

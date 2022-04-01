@@ -1,0 +1,149 @@
+.manageArticles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  top: 100px;
+}
+
+.manageArticles p {
+  margin: 0;
+}
+
+.manageArticles .cardsManager {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  width: 600px;
+  height: 200px;
+  margin: 20px 80px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  -webkit-transition: z-index 2s, -webkit-transform 0.5s;
+  transition: z-index 2s, -webkit-transform 0.5s;
+  transition: z-index 2s, transform 0.5s;
+  transition: z-index 2s, transform 0.5s, -webkit-transform 0.5s;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.manageArticles .cardsManager:hover {
+  -webkit-transform: scale(1.13);
+          transform: scale(1.13);
+  z-index: 500;
+}
+
+.manageArticles .cardsManager .imgArticle {
+  overflow: hidden;
+  height: 170px;
+  width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.manageArticles .cardsManager .imgArticle img, .manageArticles .cardsManager .imgArticle video {
+  position: relative;
+  -o-object-fit: contain;
+     object-fit: contain;
+  max-width: 100%;
+}
+
+.manageArticles .cardsManager .imgArticle span {
+  top: 10px;
+  left: -30px;
+  position: absolute;
+  background: white;
+  z-index: 10;
+  width: 100px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  text-align: center;
+}
+
+.manageArticles .cardsManager .imgUser {
+  margin-top: 10px;
+  position: relative;
+  width: 100%;
+  gap: 20px;
+}
+
+.manageArticles .cardsManager .imgUser .otherDetail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.manageArticles .cardsManager .imgUser .otherDetail img {
+  position: relative;
+  -o-object-fit: contain;
+     object-fit: contain;
+  max-width: 25px;
+}
+
+.manageArticles .cardsManager .imgUser .otherDetail p {
+  font-size: 0.8em;
+}
+
+.manageArticles .cardsManager .imgUser .description p {
+  padding-top: 10px;
+  font-size: 0.8em;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+}
+
+.manageArticles .cardsManager .imgUser .resume .title {
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  margin-bottom: 10px;
+}
+
+.manageArticles .cardsManager .imgUser .resume .viewed {
+  color: gray;
+  font-size: 0.7em;
+}
+
+.manageArticles .cardsManager .editBtn {
+  margin-left: 20px;
+  padding-left: 20px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+/*# sourceMappingURL=CardsManager.css.map */

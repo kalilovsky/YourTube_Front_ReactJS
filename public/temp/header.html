@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.php?controller=articlecontroller&action=index">
+                        <span className="icon">
+                            <i className="fas fa-home"></i>
+                        </span>
+                        <span className="titre">accueil</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?controller=articlecontroller&action=showAllArticles">
+                        <span className="icon">
+                            <i className="fas fa-concierge-bell"></i>
+                        </span>
+                        <span className="titre">recettes</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?controller=articlecontroller&action=showAbout">
+                        <span className="icon">
+                            <i className="fas fa-info"></i>
+                        </span>
+                        <span className="titre">a propos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?controller=articlecontroller&action=showContactPage">
+                        <span className="icon">
+                            <i className="fas fa-address-book"></i>
+                        </span>
+                        <span className="titre">contact</span>
+                    </a>
+                </li>
+                <li id="loginArrow">
+                    <a href="#">
+                        <span className="icon">
+                            <i className="fas fa-caret-down"></i>
+                            <!-- <?php if (!isset($_SESSION["mail"])) { ?> -->
+                                <span className="titre">connexion</span>
+                            <!-- <?php } else { ?>
+                                <span className="titre"><?= $_SESSION["pseudo"]  ?></span>
+                            <?php }  ?> -->
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div className="menuDeroulant" id="menuDeroulant">
+            <!-- <?php if (!isset($_SESSION["userType"])) { ?> -->
+                <form action="#" method="GET" className="formLogin">
+                    <div className="email">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div className="pwd">
+                        <label for="pwd">Mot de passe</label>
+                        <input type="password" name="pwd" placeholder="Mot de passe" required>
+                        <input type="hidden" name="controller" value="userscontroller">
+                    </div>
+                    <div className="button">
+                        <button name="action" value="login">Login</button>
+                    </div>
+                </form>
+                <div>
+                    <p><a href="index.php?controller=articlecontroller&action=showRegisterPage">Register now!</a></p>
+                </div>
+            <!-- <?php } elseif ($_SESSION["userType"] == "admin") { ?>
+                <div>
+                    <p><a href="index.php?controller=articlecontroller&action=showAdminDashboard">Tableau de bord</a></p>
+                    <p><a href="index.php?controller=userscontroller&action=showEditUsersAdmin">Users</a></p>
+                    <p><a href="index.php?controller=commentcontroller&action=showeditCommentsAdmin">Comments</a></p>
+                    <p><a href="index.php?controller=articlecontroller&action=showEditArticlesAdmin">Articles</a></p>
+                    <p><a href="index.php?controller=messagecontroller&action=showEditMessagesAdmin">Messages</a></p>
+                </div>
+                <div>
+                    <p><a href="view/disconnect.php">Déconnection</a></p>
+                </div>
+            <?php } elseif ($_SESSION["userType"] == "normal") { ?>
+                <div>
+                    <p><a href="view/disconnect.php">Déconnection</a></p>
+                </div>
+            <?php } ?> -->
+        </div>
+        <div className="logo" id="logo">
+            <div className="image">
+                <img src="ressource/img/logo.png" alt="logo du site">
+            </div>
+            <div className="texte">
+                <h1>aventures gustatives</h1>
+            </div>
+        </div>
+    </header>
+</body>
+</html>

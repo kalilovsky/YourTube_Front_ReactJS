@@ -1,0 +1,72 @@
+$color1: #F8F9F7;
+$color2: #84947B;
+$color3: #E1E9E1;
+$color4: #2F2E2E;
+$color5: #aeb8ae;
+$color6: #d3e0d3;
+$color7: #8b8585;
+$color8: #b2996b;
+$color9: #ffffff;
+$color10: #dddddd;
+
+.formRegister{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px 0;
+    
+    position: relative;
+    top: 100px;
+    #titreAndError{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        h2{
+            color: $color2;
+            padding: 10px 0;
+        }
+        #errorMsg{
+            color: red;
+            padding: 10px 0;
+        }
+        
+    }
+    .allInput{
+        display: flex;
+        gap: 20px;
+        .row1{
+            div{
+                display: flex;
+                align-items: center;
+                padding: 10px 0;
+                gap:10px;
+                input{
+                    position: relative;
+                    width: 100%;
+                    padding: 5px 10px;
+                    outline: none;
+                }
+            }
+        }
+    }
+    
+
+    button{
+        border-radius: 5px;
+        width: 100%;
+        border: none;
+        background: $color2;
+        color: $color1;
+        font-size: 1.1em;
+        padding: 5px 20px;
+        margin: 10px 0;
+        cursor: pointer;
+        &:hover{
+            background: $color7;
+        }
+    }
+
+}

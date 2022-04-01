@@ -1,0 +1,87 @@
+.formRegister {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px 0;
+  padding: 10px 0;
+  position: relative;
+  top: 100px;
+}
+
+.formRegister #titreAndError {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.formRegister #titreAndError h2 {
+  color: #84947B;
+  padding: 10px 0;
+}
+
+.formRegister #titreAndError #errorMsg {
+  color: red;
+  padding: 10px 0;
+}
+
+.formRegister .allInput {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+
+.formRegister .allInput .row1 div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 0;
+  gap: 10px;
+}
+
+.formRegister .allInput .row1 div input {
+  position: relative;
+  width: 100%;
+  padding: 5px 10px;
+  outline: none;
+}
+
+.formRegister button {
+  border-radius: 5px;
+  width: 100%;
+  border: none;
+  background: #84947B;
+  color: #F8F9F7;
+  font-size: 1.1em;
+  padding: 5px 20px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.formRegister button:hover {
+  background: #8b8585;
+}
+/*# sourceMappingURL=RegisterPage.css.map */

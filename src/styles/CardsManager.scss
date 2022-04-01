@@ -1,0 +1,106 @@
+.manageArticles{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    top: 100px;
+    p{
+        margin: 0;
+    }
+    .cardsManager{
+        position: relative;
+        display: flex;
+        gap: 20px;
+        width: 600px;
+        height: 200px;
+        margin: 20px 80px;
+        border: 1px solid rgba($color: #000000, $alpha: 0.1);
+        padding: 10px;
+        transition: z-index 2s, transform 0.5s;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+           &:hover{
+               transform: scale(1.13);
+               z-index: 500;
+           }
+        .imgArticle{
+            overflow: hidden;
+            height: 170px;
+            width: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            img , video{
+                position: relative;
+                object-fit: contain;
+                max-width:100%;
+            }
+            span{
+                top: 10px;
+                left: -30px;
+                position: absolute;
+                background: white;
+                z-index: 10;
+                width: 100px;
+                transform: rotate(-45deg);
+                text-align: center;
+            }
+        }
+        .imgUser{
+            margin-top: 10px;
+            position: relative;
+            width: 100%;
+            gap: 20px;
+            .otherDetail{
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                img{
+                    position: relative;
+                    object-fit: contain;
+                    max-width:25px;
+                }
+                p{
+                    font-size: 0.8em;
+
+                }
+
+            }
+            .description{
+                p{  
+                    padding-top: 10px;
+                    font-size: 0.8em;
+                    overflow: hidden;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    display: -webkit-box;
+                    text-overflow: ellipsis;
+                }
+            }
+            .resume{
+                .title{
+                    overflow: hidden;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    display: -webkit-box;
+                    text-overflow: ellipsis;
+                    margin-bottom: 10px;
+                }
+                .viewed{
+                    color: gray;
+                    font-size: 0.7em;
+                }
+            }
+        }
+        .editBtn{
+            margin-left: 20px;
+            padding-left: 20px;
+            border-left: 1px solid rgba($color: #000000, $alpha: 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+}
