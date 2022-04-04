@@ -61,15 +61,15 @@ function Header({userInfo, setUserInfo, checkCookie,tag,setTagSearch,setWordSear
             <nav>
                 <ul>
                     <li>
-                        <a className="gauche">
+                        <Link to={"/"} className="gauche">
                             <span className="icon">
                             <img src={youtubeLogo} alt="test">
                                 
                             </img>
-                            <Link to={"/"}></Link>
+                            
                             </span>
                             
-                        </a>
+                        </Link>
                     </li>
                     <li>
                         <SearchBar submitWordSearch={setWordSearch} tagAndWordSearch={tagAndWordSearch}/>

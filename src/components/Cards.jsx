@@ -45,7 +45,6 @@ function Cards({articleInfo}) {
                     <p className="title">{ DecodeEntity(articleInfo.title)}</p>
                     <p className="submitter">{articleInfo.pseudo +" | Catégorie : "+ articleInfo.categorieName}</p>
                     <p className="viewed">{articleInfo.viewCount +" Vues  | Tag :" +DecodeEntity(articleInfo.tag) }</p>
-                    <p className="title">khalil</p>
                 </div>
                 
             </div>

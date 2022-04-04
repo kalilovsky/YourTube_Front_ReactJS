@@ -1,0 +1,124 @@
+$color1: #F8F9F7;
+$color2: #84947B;
+$color3: #E1E9E1;
+$color4: #2F2E2E;
+$color5: #aeb8ae;
+$color6: #d3e0d3;
+$color7: #8b8585;
+$color8: #b2996b;
+$color9: #ffffff;
+$color10: #dddddd;
+
+
+
+.editPopup {
+    position: relative;
+    left: 0;
+    top: 100px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 1s, opacity 0.5s;
+    background: rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+    z-index: 10;
+
+    &.visible {
+        transform: scale(1);
+        transition: transform 0.2s, opacity 0.5s;
+        opacity: 1;
+
+        .thePopup {
+            transform: scale(1);
+            transition: 0.5s;
+        }
+    }
+
+    .thePopup {
+        position: relative;
+        width: 70%;
+        height: 90%;
+        
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: 10px;
+        transform: scale(0);
+        transition: 0.5s;
+        background: $color1;
+
+        .popUpCloseBtn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 25px;
+            height: 25px;
+            font-size: 18px;
+            text-align: center;
+            line-height: 25px;
+            color: #fdfdfd;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .title {
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .body {
+            .head.user {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+
+            div {
+                padding: 5px 10px;
+
+                label {
+                    padding: 0px 5px;
+                }
+            }
+
+            .rightEdit {
+                .photo {
+                    img {
+                        height: 200px;
+                    }
+                }
+            }
+
+            .messageContent {
+                position: relative;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+
+                textarea {
+                    position: relative;
+                    margin: 0 30px;
+                    width: 80%;
+                    outline: none;
+                }
+            }
+        }
+
+        .editButton {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+
+            button {
+                padding: 5px 10px;
+                font-size: medium;
+            }
+        }
+    }
+}

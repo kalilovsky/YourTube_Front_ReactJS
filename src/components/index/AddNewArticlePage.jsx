@@ -50,7 +50,7 @@ export default function AddNewArticlePage({ userInfo }) {
                                 </div>
                                 <div className="email">
                                     <label htmlFor="">Email :</label>
-                                    <label id="email" htmlFor="">{userInfo.mail}</label>
+                                    <label id="email" htmlFor="">{userInfo.email}</label>
                                 </div>
 
                                 <div className="category">

@@ -61,8 +61,9 @@ function SearchPage({ allArticles, cardsVisibility1, setCardsVisiblity1, tagAndW
         })
         //filtrer par autheur
         filteredCards = filteredCards.sort((item1, item2) => {
-            if (filter.author === "Ascendant") return item1.pseudo - item2.pseudo;
-            return item2.pseudo - item1.pseudo
+            if(filter.author==='Ascendant') return item1.pseudo.localeCompare(item2.pseudo);
+            return item2.pseudo.localeCompare(item1.pseudo);
+            
         })
         //filtrer par tag
         if (filter.tagSearch !== "") {
@@ -78,7 +79,6 @@ function SearchPage({ allArticles, cardsVisibility1, setCardsVisiblity1, tagAndW
                 return Object.keys(item).some(key=>DecodeEntity(item[key]).toLowerCase().includes(filter.wordSearch.toLowerCase())?item:false)
             })
         }
-        console.log((filteredCards));
         setCardsVisiblity1(filteredCards.length > 6 ? 6 : filteredCards.length)
         setRenderedCards(filteredCards)
 

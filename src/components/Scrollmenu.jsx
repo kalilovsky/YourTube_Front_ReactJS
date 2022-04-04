@@ -4,8 +4,12 @@ import { Link } from 'react-router-dom';
 
 function Scrollmenu({ namedClass, changeVisibility, userInfo, setUserInfo, checkCookie }) {
     const disconnect = () => {
-        document.cookie = "userInfo={}";
+        console.log(document.cookie);
+        // document.cookie = "userInfo={}";
+        document.cookie = "userInfo=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
         checkCookie();
+        console.log(document.cookie);
     }
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -31,6 +35,7 @@ function Scrollmenu({ namedClass, changeVisibility, userInfo, setUserInfo, check
             .catch((error)=>{
                 console.log(error.message);
             });
+        changeVisibility();
             
     }
     if (userInfo.isConnected) {
@@ -46,7 +51,7 @@ function Scrollmenu({ namedClass, changeVisibility, userInfo, setUserInfo, check
                         <Link to="/searchpage/">Page de recherche</Link>
                     </li>
                     <li>
-                        <Link to="/editarticlepage/">Edit post</Link>
+                        <Link to="/editmyprofile/">My Account</Link>
                     </li>
                     <li>
                         <Link to="/addnewarticlepage/">Add post</Link>

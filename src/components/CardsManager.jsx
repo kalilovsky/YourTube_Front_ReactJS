@@ -4,7 +4,6 @@ import DecodeEntity from "./decodeHtml";
 import { Link } from "react-router-dom";
 //import imgArticle from "../assets/upload/account_default.png"
 function Cardsmanager({children,articleInfo}) {
-    
     const videoElement = useRef();
     const [isVisible,setVisiblity] = useState(false);
     const handleMouseIn = (e)=>{

@@ -152,5 +152,6 @@
       -ms-flex-align: center;
           align-items: center;
   gap: 10px;
+  z-index: 11;
 }
 /*# sourceMappingURL=CardsManager.css.map */
