@@ -1,0 +1,78 @@
+
+    p{
+        margin: 0;
+    }
+    
+    .cardsMain{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        margin: 0 auto;
+        width: 800px;
+        top: 120px;
+        transition: z-index 2s, transform 0.5s;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        a{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+        }
+        
+        .imgArticle{
+            overflow: hidden;
+            height: 400px;
+            width: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            img,video{
+                position: relative;
+                object-fit: contain;
+                max-width:100%;
+            }
+            span{
+                top: 10px;
+                left: -30px;
+                position: absolute;
+                background: white;
+                z-index: 200;
+                width: 100px;
+                transform: rotate(-45deg);
+                text-align: center;
+            }
+        }
+        .imgUser{
+            margin-top: 10px;
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items:flex-start;
+            justify-content: start;
+            gap: 20px;
+            img{
+                position: relative;
+                object-fit: contain;
+                max-width:40px;
+            }
+            .resume{
+                .title{
+                    overflow: hidden;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    display: -webkit-box;
+                    text-overflow: ellipsis;
+                    margin-bottom: 10px;
+                    
+                }
+            
+                .submitter, .viewed{
+                    color: gray;
+                    font-size: 0.9em;
+                }
+        }
+    }
+}

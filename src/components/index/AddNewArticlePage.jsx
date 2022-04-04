@@ -4,7 +4,6 @@ export default function AddNewArticlePage({ userInfo }) {
     const [categoryName, setCategory] = useState([]);
     useLayoutEffect( () => {
         async function fetchData(){
-
             let formData = new FormData();
             formData.append("controller", "ArticlesController");
             formData.append("action", "getallcategories");
@@ -31,7 +30,6 @@ export default function AddNewArticlePage({ userInfo }) {
         .then(data=>data.json())
         .then(data=>{
             e.target.reset();
-            console.log(e);
         });
         
     }

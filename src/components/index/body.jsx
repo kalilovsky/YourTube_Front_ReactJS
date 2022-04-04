@@ -1,27 +1,29 @@
 import "../../styles/index/body.css"
-import React, { useEffect, useState,useLayoutEffect } from "react";
+import React, { useEffect, useState,useLayoutEffect,useCallback } from "react";
 import Cards from "../Cards"
 function Bodycontent({allArticles,cardsVisibility1,setCardsVisiblity1}) {
     
     let [renderedCards, setRenderedCards] = useState([]);
     useLayoutEffect(()=>{
-        setCardsVisiblity1(6);
-        setRenderedCards(allArticles.slice(0,(cardsVisibility1)));
+        setCardsVisiblity1(9);
     },[])
-    useEffect(()=>{
-        if (allArticles.length>0 && renderedCards.length===1){
-            setRenderedCards(allArticles.slice(0,(cardsVisibility1)));
-        } else {
-            let tmp = allArticles.slice(renderedCards.length,cardsVisibility1);
-            setRenderedCards([...renderedCards,...tmp]);
 
-        }
-        
-       
+    useEffect(()=>{
+        setRenderedCards(allArticles);
     },[allArticles,cardsVisibility1]);
+
+    const renderCardManager =useCallback(()=>{
+        let tmp =[]
+        for(let i =0; i< cardsVisibility1; i++){
+            if(!Object.keys(renderedCards).length>0){return <p>En cours de chargement...</p>}
+            tmp.push(<Cards key={renderedCards[i].idArticle} articleInfo={renderedCards[i]}/>)
+        }
+        return tmp
+    },[cardsVisibility1,renderedCards])
+
     return (
         <div className="body">
-            {renderedCards.map(x=><Cards key={x.idArticle} articleInfo={x}/>)}
+            {renderCardManager()}
             
         </div>
     )

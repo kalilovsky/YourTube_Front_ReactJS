@@ -6,8 +6,9 @@ import Scrollmenu from "./Scrollmenu"
 import { useState } from "react";
 import React,{useEffect} from "react";
 import DecodeEntity from "./decodeHtml";
+import {  Link, NavLink, useLocation } from "react-router-dom";
 
-function Header({userInfo, setUserInfo, checkCookie,tag}) {
+function Header({userInfo, setUserInfo, checkCookie,tag,setTagSearch,setWordSearch,tagAndWordSearch}) {
     const [scrollMenuClass,scrollMenuToggle] = useState("")
     const [myTag,setTag]=useState({});
     let test3 =[]
@@ -48,12 +49,13 @@ function Header({userInfo, setUserInfo, checkCookie,tag}) {
             test3[test2[i]] = test[test2[i]]
         }
         handleTag(test3);
-        console.log("render")
     },[tag])
     const handleTag = (array)=>{
         setTag(test3)
-    //    setTimeout(()=>console.log(myTag),2000);
     };
+    const handelLink = (e)=>{
+        setTagSearch(e.target.innerHTML)
+    }
     return (
         <header>
             <nav>
@@ -61,13 +63,16 @@ function Header({userInfo, setUserInfo, checkCookie,tag}) {
                     <li>
                         <a className="gauche">
                             <span className="icon">
-                            <img src={youtubeLogo} alt="test"></img>
+                            <img src={youtubeLogo} alt="test">
+                                
+                            </img>
+                            <Link to={"/"}></Link>
                             </span>
                             
                         </a>
                     </li>
                     <li>
-                        <SearchBar/>
+                        <SearchBar submitWordSearch={setWordSearch} tagAndWordSearch={tagAndWordSearch}/>
                     </li>
                     <li>
                         <a onClick={scrollMenuVisibilityHandle} className="droite">
@@ -75,14 +80,13 @@ function Header({userInfo, setUserInfo, checkCookie,tag}) {
                             <img src={down} alt="test"></img>
 
                             </span>
-                            <span className="titre">{userInfo.isConnected == true ? userInfo.pseudo : "connexion" }</span>
+                            <span className="titre">{userInfo.isConnected ? userInfo.pseudo : "connexion" }</span>
                         </a>
                     </li>
                 </ul>
             <div className="tagSection">
                 <ul>
-                 {Object.keys(myTag).length>0 && Object.keys(myTag).map((x)=><li>{x + " " + myTag[x]}</li>) }
-                    
+                    {Object.keys(myTag).length>0 && Object.keys(myTag).map((x)=><li name={x} key={x}><NavLink to={"/searchpage/"+x+"/"} onClick={handelLink} >{x}</NavLink></li>) }
                 </ul>
             </div>
             </nav>

@@ -52,6 +52,14 @@ header nav ul li .gauche {
   margin-left: 40px;
 }
 
+header nav ul li .gauche a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  top: 0;
+}
+
 header nav ul li .droite {
   margin-right: 40px;
 }
@@ -109,6 +117,11 @@ header nav .tagSection ul li {
   padding: 5px 10px;
   border-radius: 20px;
   background-color: rgba(0, 0, 0, 0.05);
+}
+
+header nav .tagSection ul li a.active {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10%;
 }
 
 header .menuDeroulant {
@@ -234,5 +247,11 @@ header .logo .texte h1 {
   font-family: "Metropolis";
   letter-spacing: 4px;
   color: #84947B;
+}
+
+#searchButton {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 /*# sourceMappingURL=header.css.map */

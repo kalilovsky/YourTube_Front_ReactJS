@@ -1,24 +1,25 @@
-.body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  position: relative;
-  top: 100px;
-}
-
-.body p {
+p {
   margin: 0;
 }
 
-.body .cardsMain {
+.cardsMain {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: relative;
-  width: 300px;
-  margin: 10px;
+  margin: 0 auto;
+  width: 800px;
+  top: 120px;
   -webkit-transition: z-index 2s, -webkit-transform 0.5s;
   transition: z-index 2s, -webkit-transform 0.5s;
   transition: z-index 2s, transform 0.5s;
@@ -27,23 +28,17 @@
           box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
-.body .cardsMain a {
+.cardsMain a {
   position: absolute;
   width: 100%;
   height: 100%;
   z-index: 10;
 }
 
-.body .cardsMain:hover {
-  -webkit-transform: scale(1.13);
-          transform: scale(1.13);
-  z-index: 500;
-}
-
-.body .cardsMain .imgArticle {
+.cardsMain .imgArticle {
   overflow: hidden;
-  height: 170px;
-  width: 300px;
+  height: 400px;
+  width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -56,14 +51,14 @@
   position: relative;
 }
 
-.body .cardsMain .imgArticle img, .body .cardsMain .imgArticle video {
+.cardsMain .imgArticle img, .cardsMain .imgArticle video {
   position: relative;
   -o-object-fit: contain;
      object-fit: contain;
   max-width: 100%;
 }
 
-.body .cardsMain .imgArticle span {
+.cardsMain .imgArticle span {
   top: 10px;
   left: -30px;
   position: absolute;
@@ -75,7 +70,7 @@
   text-align: center;
 }
 
-.body .cardsMain .imgUser {
+.cardsMain .imgUser {
   margin-top: 10px;
   position: relative;
   width: 100%;
@@ -91,14 +86,14 @@
   gap: 20px;
 }
 
-.body .cardsMain .imgUser img {
+.cardsMain .imgUser img {
   position: relative;
   -o-object-fit: contain;
      object-fit: contain;
   max-width: 40px;
 }
 
-.body .cardsMain .imgUser .resume .title {
+.cardsMain .imgUser .resume .title {
   overflow: hidden;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -107,8 +102,8 @@
   margin-bottom: 10px;
 }
 
-.body .cardsMain .imgUser .resume .submitter, .body .cardsMain .imgUser .resume .viewed {
+.cardsMain .imgUser .resume .submitter, .cardsMain .imgUser .resume .viewed {
   color: gray;
-  font-size: 0.7em;
+  font-size: 0.9em;
 }
-/*# sourceMappingURL=Cards.css.map */
+/*# sourceMappingURL=OneArticle.css.map */
