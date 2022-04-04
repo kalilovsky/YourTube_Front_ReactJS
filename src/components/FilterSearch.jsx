@@ -90,7 +90,7 @@ export default function FilterSearch({ allArticles, startFilter,setTagAndWordSea
                             </select>
                         </ul>
                         <ul>
-                            <p>Par Autheur</p>
+                            <p>Par Vues</p>
                             <select name="author" value={filter.author} onChange={handelInputChange}>
                                 <option>Ascendant</option>
                                 <option>Descendant</option>

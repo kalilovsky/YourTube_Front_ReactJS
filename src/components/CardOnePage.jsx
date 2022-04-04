@@ -4,6 +4,7 @@ import DecodeEntity from "./decodeHtml"
 
 export default function CardOnePage({articleInfo}){
 
+    
     return(
         <div className="cardsMain" >
         

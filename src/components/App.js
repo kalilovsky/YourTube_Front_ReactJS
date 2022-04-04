@@ -77,25 +77,25 @@ function App() {
     setTagAndWordSearch({ tagSearch: "", wordSearch: "" });
 
   }
-  const incerementView = (idArticle) => {
-    const changedArticle = articlesInfo.filter(item => {
-      if (~~item.idArticle === ~~idArticle) {
-        item.viewCount = ~~item.viewCount + 1;
+  const incerementView = () => {
+    // const changedArticle = articlesInfo.filter(item => {
+    //   if (~~item.idArticle === ~~idArticle) {
+    //     item.viewCount = ~~item.viewCount + 1;
 
-      }
-      return item;
-    })
-    setArticleInfo(changedArticle);
-
+    //   }
+    //   return item;
+    // })
+  //  setArticleInfo(changedArticle);
+  getAllArticle();
   }
   return (
     <BrowserRouter>
       <Header userInfo={userInfo} setUserInfo={(data) => { setUserInfo(data) }} checkCookie={checkCookie} tag={articlesInfo} setWordSearch={handelWordSearch} setTagSearch={handelTag} tagAndWordSearch={tagAndWordSearch} />
       <Routes>
-        <Route path='/' element={<Bodycontent allArticles={articlesInfo} cardsVisibility1={cardsVisibility} setCardsVisiblity1={setCardsVisiblity} />} />
-        <Route path='/managearticles/' element={<ManageArticles userInfo={userInfo} allArticles={articlesInfo} cardsVisibility1={cardsVisibility} setCardsVisiblity1={setCardsVisiblity} getAllArticle={getAllArticle} />} />
-        <Route path='/searchpage/' element={<SearchPage allArticles={articlesInfo} cardsVisibility1={cardsVisibility} setCardsVisiblity1={setCardsVisiblity} tagAndWordSearch={tagAndWordSearch} resetTagAndWord={resetTagAndWord} />} />
-        <Route path='/searchpage/:tagSearch' element={<SearchPage allArticles={articlesInfo} cardsVisibility1={cardsVisibility} setCardsVisiblity1={setCardsVisiblity} tagAndWordSearch={tagAndWordSearch} resetTagAndWord={resetTagAndWord} />} />
+        <Route path='/' element={<Bodycontent incerementView={incerementView} allArticles={articlesInfo} cardsVisibility1={cardsVisibility} setCardsVisiblity1={setCardsVisiblity} />} />
+        <Route path='/managearticles/' element={<ManageArticles incerementView={incerementView} userInfo={userInfo} allArticles={articlesInfo} cardsVisibility1={cardsVisibility} setCardsVisiblity1={setCardsVisiblity} getAllArticle={getAllArticle} />} />
+        <Route path='/searchpage/' element={<SearchPage allArticles={articlesInfo} cardsVisibility1={cardsVisibility} setCardsVisiblity1={setCardsVisiblity}  tagAndWordSearch={tagAndWordSearch} resetTagAndWord={resetTagAndWord} incerementView1={incerementView} />} />
+        <Route path='/searchpage/:tagSearch' element={<SearchPage allArticles={articlesInfo} cardsVisibility1={cardsVisibility} setCardsVisiblity1={setCardsVisiblity} tagAndWordSearch={tagAndWordSearch} resetTagAndWord={resetTagAndWord} incerementView1={incerementView}/>} />
         <Route path='/editmyprofile/' element={<EditProfile userInfo={userInfo} setUserInfo={setUserInfo}/>} />
         <Route path='/addnewarticlepage/' element={<AddNewArticlePage userInfo={userInfo} />} />
         <Route path='/registerpage/' element={<RegisterPage userInfo={userInfo} setUserInfo={(data) => { setUserInfo(data) }} />} />

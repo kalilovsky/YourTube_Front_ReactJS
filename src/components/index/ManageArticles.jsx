@@ -2,7 +2,7 @@ import "../../styles/index/body.css"
 import React, { useState, useLayoutEffect, useEffect, useCallback } from "react";
 import Cardsmanager from "../CardsManager"
 import { useParams } from "react-router-dom";
-function ManageArticles({ allArticles, cardsVisibility1, setCardsVisiblity1, userInfo,getAllArticle }) {
+function ManageArticles({ allArticles, cardsVisibility1, setCardsVisiblity1, userInfo,getAllArticle,incerementView }) {
     let [renderedCards, setRenderedCards] = useState([]);
     
     useLayoutEffect(() => {
@@ -35,7 +35,7 @@ function ManageArticles({ allArticles, cardsVisibility1, setCardsVisiblity1, use
                 return tmp
             }
 
-            tmp.push(<Cardsmanager key={renderedCards[i].idArticle} articleInfo={renderedCards[i]}>
+            tmp.push(<Cardsmanager key={renderedCards[i].idArticle} incerementView={incerementView} articleInfo={renderedCards[i]}>
                 <div className="editBtn">
                     
                     <button type="button" name={renderedCards[i].idArticle} onClick={deleteArticle} className="btn btn-danger">Delete</button>

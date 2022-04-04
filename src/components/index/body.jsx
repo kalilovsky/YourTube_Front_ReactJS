@@ -1,7 +1,7 @@
 import "../../styles/index/body.css"
 import React, { useEffect, useState,useLayoutEffect,useCallback } from "react";
 import Cards from "../Cards"
-function Bodycontent({allArticles,cardsVisibility1,setCardsVisiblity1}) {
+function Bodycontent({allArticles,cardsVisibility1,setCardsVisiblity1,incerementView}) {
     
     let [renderedCards, setRenderedCards] = useState([]);
     useLayoutEffect(()=>{
@@ -16,7 +16,7 @@ function Bodycontent({allArticles,cardsVisibility1,setCardsVisiblity1}) {
         let tmp =[]
         for(let i =0; i< cardsVisibility1; i++){
             if(!Object.keys(renderedCards).length>0){return <p>En cours de chargement...</p>}
-            tmp.push(<Cards key={renderedCards[i].idArticle} articleInfo={renderedCards[i]}/>)
+            tmp.push(<Cards key={renderedCards[i].idArticle} articleInfo={renderedCards[i]} incerementView1={incerementView}/>)
         }
         return tmp
     },[cardsVisibility1,renderedCards])

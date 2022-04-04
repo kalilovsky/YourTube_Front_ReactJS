@@ -3,7 +3,7 @@ import React, { useRef, useState } from "react";
 import DecodeEntity from "./decodeHtml";
 import { Link } from "react-router-dom";
 //import imgArticle from "../assets/upload/account_default.png"
-function Cardsmanager({children,articleInfo}) {
+function Cardsmanager({children,incerementView,articleInfo}) {
     const videoElement = useRef();
     const [isVisible,setVisiblity] = useState(false);
     const handleMouseIn = (e)=>{
@@ -25,9 +25,30 @@ function Cardsmanager({children,articleInfo}) {
             videoElement.current.pause();
         }
     }
+    const incerementViews = ()=>{
+        let formData = new FormData();
+        formData.append("idArticle",articleInfo.idArticle)
+        //formData.append("viewCount",allArticleInfo.filter(item=>item.idArticle === params.idArticle)[0].viewCount)
+        formData.append("controller","ArticlesController");
+        formData.append("action","updateView");
+        let options ={method : "post",
+                    credentials :"include",
+                    body : formData,
+                    
+                };
+        //if ( articleInfo !== undefined && Object.keys(articleInfo).length >0){
+        fetch("http://localhost:3000/index.php", options)
+        
+        .then(data=>data.json())
+        .then(res=>{
+            if (res ){
+                incerementView();
+            }
+        })
+    }
     return (
         <div className="cardsManager" onMouseOver={handleMouseIn} onMouseLeave={handleMouseOut} >
-        <Link to={"/OneArticle/"+articleInfo.idArticle}></Link>
+        <Link to={"/OneArticle/"+articleInfo.idArticle} onClick={incerementViews}></Link>
             <div className="imgArticle">
                 <span>{ articleInfo.fileType}</span>
                 {articleInfo.fileType==="video"? <video src={"http://localhost:3000/public/articlefile/"+articleInfo.filePath}  ref={videoElement} loop muted /> : <img src={"http://localhost:3000/public/articlefile/"+articleInfo.filePath} alt="l'article"></img>}

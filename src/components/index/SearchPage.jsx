@@ -4,7 +4,7 @@ import Cardsmanager from "../CardsManager"
 import FilterSearch from "../FilterSearch";
 import { useParams, useSearchParams } from "react-router-dom";
 import DecodeEntity from "../decodeHtml";
-function SearchPage({ allArticles, cardsVisibility1, setCardsVisiblity1, tagAndWordSearch,resetTagAndWord}) {
+function SearchPage({ allArticles, cardsVisibility1, setCardsVisiblity1,tagAndWordSearch,resetTagAndWord,incerementView1}) {
     let [renderedCards, setRenderedCards] = useState([]);
     const [filter, setFilter] = useState({
         fileType: "Tous",
@@ -14,6 +14,7 @@ function SearchPage({ allArticles, cardsVisibility1, setCardsVisiblity1, tagAndW
         tagSearch: "",
         wordSearch: ""
     })
+    
     useLayoutEffect(() => {
         setCardsVisiblity1(9);
     }, [])
@@ -36,7 +37,7 @@ function SearchPage({ allArticles, cardsVisibility1, setCardsVisiblity1, tagAndW
                 return tmp
             }
 
-            tmp.push(<Cardsmanager key={renderedCards[i].idArticle} articleInfo={renderedCards[i]} />)
+            tmp.push(<Cardsmanager key={renderedCards[i].idArticle} incerementView={incerementView1} articleInfo={renderedCards[i]} />)
         }
         return tmp
     }, [cardsVisibility1, renderedCards])
@@ -59,10 +60,10 @@ function SearchPage({ allArticles, cardsVisibility1, setCardsVisiblity1, tagAndW
             if (filter.creationDate === "Ascendant") return Date.parse(item1.creationDate) - Date.parse(item2.creationDate)
             return -Date.parse(item1.creationDate) + Date.parse(item2.creationDate)
         })
-        //filtrer par autheur
+        //filtrer par vues
         filteredCards = filteredCards.sort((item1, item2) => {
-            if(filter.author==='Ascendant') return item1.pseudo.localeCompare(item2.pseudo);
-            return item2.pseudo.localeCompare(item1.pseudo);
+            if(filter.author==='Ascendant') return item1.viewCount - item2.viewCount ;
+            return item2.viewCount - item1.viewCount;
             
         })
         //filtrer par tag
