@@ -4,12 +4,9 @@ import { Link } from 'react-router-dom';
 
 function Scrollmenu({ namedClass, changeVisibility, userInfo, setUserInfo, checkCookie }) {
     const disconnect = () => {
-        console.log(document.cookie);
-        // document.cookie = "userInfo={}";
-        document.cookie = "userInfo=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-
+        // document.cookie = "userInfo={};";
+        document.cookie = "userInfo=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
         checkCookie();
-        console.log(document.cookie);
     }
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -21,7 +18,7 @@ function Scrollmenu({ namedClass, changeVisibility, userInfo, setUserInfo, check
             credentials: "include",
             body: formData
         };
-        fetch("http://localhost:3000/index.php", options)
+        fetch("https://urtubeback.herokuapp.com/index.php", options)
             .then(data => data.json())
             .then(data => {
                 if (!data.isConnected) {
@@ -35,7 +32,6 @@ function Scrollmenu({ namedClass, changeVisibility, userInfo, setUserInfo, check
             .catch((error)=>{
                 console.log(error.message);
             });
-        changeVisibility();
             
     }
     if (userInfo.isConnected) {

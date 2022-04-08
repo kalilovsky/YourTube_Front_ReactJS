@@ -20,7 +20,7 @@ export default function FilterSearch({ allArticles, startFilter,setTagAndWordSea
                 credentials: "include",
                 body: formData
             };
-            const request = await fetch("http://localhost:3000/index.php", options)
+            const request = await fetch("https://urtubeback.herokuapp.com/index.php", options)
             const response = await request.json()
             setCategory(response);
         }

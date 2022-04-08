@@ -80,10 +80,16 @@ header nav ul li a .icon {
   margin-right: 5px;
 }
 
-header nav ul li a .icon img {
+header nav ul li a .icon .downFleche {
   position: relative;
   max-height: 20px;
   min-height: 20px;
+}
+
+header nav ul li a .icon img {
+  position: relative;
+  max-height: 40px;
+  min-height: 40px;
 }
 
 header nav .tagSection {

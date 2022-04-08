@@ -31,13 +31,11 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 10;
 }
 
 .body .cardsMain:hover {
   -webkit-transform: scale(1.13);
           transform: scale(1.13);
-  z-index: 500;
 }
 
 .body .cardsMain .imgArticle {

@@ -62,10 +62,15 @@ header{
                     .icon{
                         position: relative;
                         margin-right: 5px;
-                        img{
+                        .downFleche{
                             position: relative;
                             max-height: 20px;
                             min-height: 20px;
+                        }
+                        img{
+                            position: relative;
+                            max-height: 40px;
+                            min-height: 40px;
                         }
                     }
                 }

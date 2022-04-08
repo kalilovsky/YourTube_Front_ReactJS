@@ -10,7 +10,7 @@ export default function RegisterPage({userInfo,setUserInfo}){
         let options ={method : "post",
                     credentials :"include",
                     body : formData};
-        fetch("http://localhost:3000/index.php", options)
+        fetch("https://urtubeback.herokuapp.com/index.php", options)
         .then(data=>data.json())
         .then(data=>{
             if (!data.isConnected) {

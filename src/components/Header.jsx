@@ -77,7 +77,7 @@ function Header({userInfo, setUserInfo, checkCookie,tag,setTagSearch,setWordSear
                     <li>
                         <a onClick={scrollMenuVisibilityHandle} className="droite">
                             <span className="icon">
-                            <img src={down} alt="test"></img>
+                            <img className="downFleche" src={down} alt="test"></img>
 
                             </span>
                             <span className="titre">{userInfo.isConnected ? userInfo.pseudo : "connexion" }</span>

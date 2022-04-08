@@ -2,6 +2,7 @@ import React, { useCallback, useLayoutEffect, useState } from "react";
 import "../../styles/EditArticlePage.css"
 export default function AddNewArticlePage({ userInfo }) {
     const [categoryName, setCategory] = useState([]);
+    const [stateMsg, setStateMsg ] = useState(null);
     useLayoutEffect( () => {
         async function fetchData(){
             let formData = new FormData();
@@ -12,7 +13,7 @@ export default function AddNewArticlePage({ userInfo }) {
                 credentials: "include",
                 body: formData
             };
-            const request = await fetch("http://localhost:3000/index.php", options)
+            const request = await fetch("https://urtubeback.herokuapp.com/index.php", options)
             const response = await request.json()
             setCategory(response);
         }
@@ -26,9 +27,10 @@ export default function AddNewArticlePage({ userInfo }) {
         let options ={method : "post",
                     credentials :"include",
                     body : formData};
-        fetch("http://localhost:3000/index.php", options)
+        fetch("https://urtubeback.herokuapp.com/index.php", options)
         .then(data=>data.json())
         .then(data=>{
+            setStateMsg(data);
             e.target.reset();
         });
         
@@ -38,6 +40,7 @@ export default function AddNewArticlePage({ userInfo }) {
             <div className="thePopup" id="thePopup">
                 <div className="title">
                     <h2>Détails de l'article</h2>
+                    <p>{stateMsg}</p>
                 </div>
                 <div className="body1">
                     <form action="" id="editPopupForm" onSubmit={handleSubmit}>

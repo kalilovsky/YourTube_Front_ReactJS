@@ -4,7 +4,8 @@ import Cardsmanager from "../CardsManager"
 import { useParams } from "react-router-dom";
 function ManageArticles({ allArticles, cardsVisibility1, setCardsVisiblity1, userInfo,getAllArticle,incerementView }) {
     let [renderedCards, setRenderedCards] = useState([]);
-    
+    const [stateMsg, setStateMsg ] = useState(null);
+
     useLayoutEffect(() => {
         setCardsVisiblity1(9);
     }, [])
@@ -14,13 +15,14 @@ function ManageArticles({ allArticles, cardsVisibility1, setCardsVisiblity1, use
     }, [allArticles]);
 
     const deleteArticle = (e)=>{
-        const URL = "http://localhost:3000/index.php?controller=ArticlesController&action=deleteArticle&idArticle="+e.target.name
+        const URL = "https://urtubeback.herokuapp.com/index.php?controller=ArticlesController&action=deleteArticle&idArticle="+e.target.name
         fetch(URL)
         .then(data=>data.text)
         .then(resp=>{
             if (resp = "delete done"){
                 setRenderedCards(renderedCards.filter(item=> ~~item.idArticle === ~~e.target.name ? null : item));
                 getAllArticle();
+                setStateMsg(resp)
             }else{
                 console.log(resp);
             }

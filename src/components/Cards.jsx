@@ -42,7 +42,7 @@ function Cards({articleInfo,incerementView1}) {
                     
                 };
         //if ( articleInfo !== undefined && Object.keys(articleInfo).length >0){
-        fetch("http://localhost:3000/index.php", options)
+        fetch("https://urtubeback.herokuapp.com/index.php", options)
         
         .then(data=>data.json())
         .then(res=>{
@@ -56,10 +56,10 @@ function Cards({articleInfo,incerementView1}) {
         <Link to={"/OneArticle/"+articleInfo.idArticle} onClick={incerementView}></Link>
             <div className="imgArticle">
             <span>{ articleInfo.fileType}</span>
-            {articleInfo.fileType==="video" ? <video src={"http://localhost:3000/public/articlefile/"+articleInfo.filePath}  ref={videoElement} loop muted /> : <img src={"http://localhost:3000/public/articlefile/"+articleInfo.filePath} alt="l'article"></img>}
+            {articleInfo.fileType==="video" ? <video src={"https://urtubeback.herokuapp.com/public/articlefile/"+articleInfo.filePath}  ref={videoElement} loop muted /> : <img src={"https://urtubeback.herokuapp.com/public/articlefile/"+articleInfo.filePath} alt="l'article"></img>}
             </div>
             <div className="imgUser">
-            <img src={"http://localhost:3000/public/userprofile/"+articleInfo.profilPhoto} alt="user"></img>
+            <img src={"https://urtubeback.herokuapp.com/public/userprofile/"+articleInfo.profilPhoto} alt="user"></img>
                 
                 <div className="resume">
                     <p className="title">{ DecodeEntity(articleInfo.title)}</p>

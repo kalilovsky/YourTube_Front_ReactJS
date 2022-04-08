@@ -10,10 +10,10 @@ export default function CardOnePage({articleInfo}){
         
         <div className="imgArticle">
         
-        {articleInfo.fileType==="video" ? <video src={"http://localhost:3000/public/articlefile/"+articleInfo.filePath}  controls /> : <img src={"http://localhost:3000/public/articlefile/"+articleInfo.filePath} alt="l'article"></img>}
+        {articleInfo.fileType==="video" ? <video src={"https://urtubeback.herokuapp.com/public/articlefile/"+articleInfo.filePath}  controls /> : <img src={"https://urtubeback.herokuapp.com/public/articlefile/"+articleInfo.filePath} alt="l'article"></img>}
         </div>
         <div className="imgUser">
-        <img src={"http://localhost:3000/public/userprofile/"+articleInfo.profilPhoto} alt="user"></img>
+        <img src={"https://urtubeback.herokuapp.com/public/userprofile/"+articleInfo.profilPhoto} alt="user"></img>
             
             <div className="resume">
                 <p className="title">{ DecodeEntity(articleInfo.title)}</p>

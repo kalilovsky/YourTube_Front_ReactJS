@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../../styles/EditProfile.css"
 
 export default function EditProfile({userInfo,setUserInfo}) {
-    
+    const [stateMsg, setStateMsg ] = useState(null);
     const [myAccountInfo, setMyAccountInfo] = useState(userInfo);
     useEffect(()=>{
         setMyAccountInfo(userInfo);
@@ -26,12 +26,13 @@ export default function EditProfile({userInfo,setUserInfo}) {
             credentials: "include",
             body: formData
         };
-        const request = await fetch("http://localhost:3000/index.php",options)
+        const request = await fetch("https://urtubeback.herokuapp.com/index.php",options)
         if (request.status !== 500) {
           const response = await request.json();
           document.cookie = "userInfo=" + JSON.stringify(response);
-          console.log(response);
+          
           setUserInfo(response);
+          setStateMsg("user bien actualisé!")
         }
     
     }
@@ -41,6 +42,7 @@ export default function EditProfile({userInfo,setUserInfo}) {
 
                 <div className="title">
                     <h2>Détails du compte</h2>
+                    <p>{stateMsg}</p>
                 </div>
                 <div className="body">
                     <form action="" id="editPopupForm" onSubmit={handelSubmit}>
@@ -70,7 +72,7 @@ export default function EditProfile({userInfo,setUserInfo}) {
                             </div>
                             <div className="rightEdit">
                                 <div className="photo">
-                                    <img id="photo" src={"http://localhost:3000/public/articlefile/"+myAccountInfo.photo} alt="" srcSet="" data-src="account_default.png" />
+                                    <img id="photo" src={"https://urtubeback.herokuapp.com/public/articlefile/"+myAccountInfo.photo} alt="" srcSet="" data-src="account_default.png" />
                                 </div>
                                 <div className="fileUpload">
                                     <input className="form-control" type="file" id="file" name="file" />

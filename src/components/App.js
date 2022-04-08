@@ -25,6 +25,7 @@ function App() {
   const checkCookie = () => {
     //récupération des donnés session eventuelles de l'utilisateur.
     let cookieInfo = decodeURIComponent(document.cookie).split(";");
+    console.log(cookieInfo);
     let userInfoTmp = { isConnected: false };
     for (let i = 0; i < cookieInfo.length; i++) {
       let c = cookieInfo[i];
@@ -38,11 +39,11 @@ function App() {
     if (Object.keys(userInfoTmp).length === 0) {
       userInfoTmp = { isConnected: false }
     }
+    console.log(userInfoTmp);
     setUserInfo(userInfoTmp);
   }
   const getAllArticle = async function () {
-
-    const request = await fetch("http://localhost:3000/index.php?controller=ArticlesController&action=getallarticles")
+    const request = await fetch("https://urtubeback.herokuapp.com/index.php?controller=ArticlesController&action=getallarticles")
     if (request.status !== 500) {
       const response = await request.json();
       setArticleInfo(response);
@@ -55,6 +56,7 @@ function App() {
   }, [userInfo])
   useEffect(() => {
     checkCookie();
+    
     window.addEventListener("scroll", handelScroll)
   }, [])
 

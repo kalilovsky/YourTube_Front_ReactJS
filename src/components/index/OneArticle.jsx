@@ -7,8 +7,11 @@ export default function OneArticle({allArticleInfo}){
     const params = useParams()
     const [articleInfo,setArticleInfo] = useState({})
     const initArticle = useCallback(()=>    {
-        
-        const myArray = allArticleInfo.filter(item=>item.idArticle === params.idArticle)[0]
+        if (allArticleInfo.length >0){
+            console.log('def');
+        }
+        const myArray = allArticleInfo.filter(item=>~~item.idArticle === ~~params.idArticle)[0]
+        console.log(myArray);
         return myArray;
     },[allArticleInfo])
     useEffect(()=>{
@@ -16,8 +19,8 @@ export default function OneArticle({allArticleInfo}){
     },[allArticleInfo])
 
     useEffect(()=>{
-        
     //}
+    
     },[])
     const fetch = useCallback(()=>{
         

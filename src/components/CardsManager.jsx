@@ -37,7 +37,7 @@ function Cardsmanager({children,incerementView,articleInfo}) {
                     
                 };
         //if ( articleInfo !== undefined && Object.keys(articleInfo).length >0){
-        fetch("http://localhost:3000/index.php", options)
+        fetch("https://urtubeback.herokuapp.com/index.php", options)
         
         .then(data=>data.json())
         .then(res=>{
@@ -51,7 +51,7 @@ function Cardsmanager({children,incerementView,articleInfo}) {
         <Link to={"/OneArticle/"+articleInfo.idArticle} onClick={incerementViews}></Link>
             <div className="imgArticle">
                 <span>{ articleInfo.fileType}</span>
-                {articleInfo.fileType==="video"? <video src={"http://localhost:3000/public/articlefile/"+articleInfo.filePath}  ref={videoElement} loop muted /> : <img src={"http://localhost:3000/public/articlefile/"+articleInfo.filePath} alt="l'article"></img>}
+                {articleInfo.fileType==="video"? <video src={"https://urtubeback.herokuapp.com/public/articlefile/"+articleInfo.filePath}  ref={videoElement} loop muted /> : <img src={"https://urtubeback.herokuapp.com/public/articlefile/"+articleInfo.filePath} alt="l'article"></img>}
             </div>
             <div className="imgUser">
                 <div className="resume">
@@ -59,7 +59,7 @@ function Cardsmanager({children,incerementView,articleInfo}) {
                     <p className="viewed">{articleInfo.viewCount +" Vues"}</p>
                 </div>
                 <div className="otherDetail">
-                    <img src={"http://localhost:3000/public/userprofile/"+articleInfo.profilPhoto} alt="test"></img>
+                    <img src={"https://urtubeback.herokuapp.com/public/userprofile/"+articleInfo.profilPhoto} alt="test"></img>
                     <p className="submitter">{articleInfo.pseudo}</p>
                     <p>&#8226;</p>
                     <p>{articleInfo.categorieName}</p>

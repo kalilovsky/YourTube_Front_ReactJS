@@ -48,7 +48,6 @@
 .manageArticles .cardsManager:hover {
   -webkit-transform: scale(1.13);
           transform: scale(1.13);
-  z-index: 200;
 }
 
 .manageArticles .cardsManager .imgArticle {
